@@ -103,18 +103,18 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
 
       <VStack w={{ sm: "90%", md: "60%" }} mx="auto">
         <motion.div
-          initial="show"
-          animate="show"
-          exit="hidden"
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: [0, 1],
-              transition: {
-                duration: 1,
-              },
-            },
-          }}
+          // initial="show"
+          // animate="show"
+          // exit="hidden"
+          // variants={{
+          //   hidden: { opacity: 0 },
+          //   show: {
+          //     opacity: [0, 1],
+          //     transition: {
+          //       duration: 1,
+          //     },
+          //   },
+          // }}
           key={sceneId}
         >
           {scene && typeof scene === "string" ? (
@@ -124,10 +124,10 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
           )}
         </motion.div>
         <motion.ol
-          initial="show"
-          animate="show"
-          exit="hidden"
-          variants={container}
+          // initial="show"
+          // animate="show"
+          // exit="hidden"
+          // variants={container}
           className={css({
             display: "flex",
             justifyContent: "center",
@@ -192,18 +192,18 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
           })}
         </motion.ol>
         <motion.div
-          initial="show"
-          animate="show"
-          exit="hidden"
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: [0, 1],
-              transition: {
-                duration: 1,
-              },
-            },
-          }}
+          // initial="show"
+          // animate="show"
+          // exit="hidden"
+          // variants={{
+          //   hidden: { opacity: 0 },
+          //   show: {
+          //     opacity: [0, 1],
+          //     transition: {
+          //       duration: 1,
+          //     },
+          //   },
+          // }}
           key={Math.random() * 10000}
           style={{ width: "100%" }}
         >

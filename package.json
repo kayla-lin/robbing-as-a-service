@@ -1,4 +1,5 @@
 {
+  "homepage": ".",
   "name": "twine-story",
   "private": true,
   "version": "0.0.0",
@@ -14,6 +15,7 @@
     "framer-motion": "^10.16.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "vite-plugin-singlefile": "^0.13.5",
     "zustand": "^4.4.7"
   },
   "devDependencies": {

@@ -83,24 +83,6 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
 
   return (
     <styled.div minH="100svh" w="100%" bg="slate.950" color="white" p={8}>
-      {/* <styled.div pos="absolute" top={0} left={0}>
-        <input
-          color="black"
-          value={debug}
-          onChange={(e) => {
-            const value = e.currentTarget.value;
-            setDebug(value);
-          }}
-        />
-        <button
-          onClick={() => {
-            selectStoryPassage(debug as PassageId<keyof Scene>);
-          }}
-        >
-          send
-        </button>
-      </styled.div> */}
-
       <VStack w={{ sm: "90%", md: "60%" }} mx="auto">
         <motion.div
           initial="hidden"
@@ -115,6 +97,7 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
               },
             },
           }}
+          key={sceneId}
         >
           {scene && typeof scene === "string" ? (
             <styled.img alt={passageId} src={scene} w="50%" mx="auto" />

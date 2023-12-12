@@ -20,16 +20,16 @@ import {
 } from "../story-store";
 import { getViewableOptions } from "../utils/getViewableOptions";
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 1,
-      delayChildren: 0.2,
-    },
-  },
-};
+// const container = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 1,
+//       delayChildren: 0.2,
+//     },
+//   },
+// };
 
 const item = {
   hidden: { opacity: 0, y: [0, 5], transition: { duration: 0.2 } },

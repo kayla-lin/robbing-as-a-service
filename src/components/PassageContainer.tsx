@@ -32,9 +32,9 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 1, y: [0, 5], transition: { duration: 0.2 } },
+  hidden: { opacity: 0, y: [0, 5], transition: { duration: 0.2 } },
   show: {
-    opacity: [1, 1],
+    opacity: [0, 1],
     y: [5, 0],
     type: "spring",
     stiffness: 100,
@@ -64,6 +64,8 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
   const gameState = useStoryStore((state) => state.gameState);
   const passageHistory = useStoryStore((state) => state.passageHistory);
 
+  //const [debug, setDebug] = useState("");
+
   useEffect(() => {
     if (passage.trigger) {
       const trigger = gameState[passage.trigger.key];
@@ -81,21 +83,38 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
 
   return (
     <styled.div minH="100svh" w="100%" bg="slate.950" color="white" p={8}>
+      {/* <styled.div pos="absolute" top={0} left={0}>
+        <input
+          color="black"
+          value={debug}
+          onChange={(e) => {
+            const value = e.currentTarget.value;
+            setDebug(value);
+          }}
+        />
+        <button
+          onClick={() => {
+            selectStoryPassage(debug as PassageId<keyof Scene>);
+          }}
+        >
+          send
+        </button>
+      </styled.div> */}
+
       <VStack w={{ sm: "90%", md: "60%" }} mx="auto">
         <motion.div
-          initial="show"
+          initial="hidden"
           animate="show"
           exit="hidden"
           variants={{
-            hidden: { opacity: 1 },
+            hidden: { opacity: 0 },
             show: {
-              opacity: [1, 1],
+              opacity: [0, 1],
               transition: {
                 duration: 1,
               },
             },
           }}
-          key={sceneId}
         >
           {scene && typeof scene === "string" ? (
             <styled.img alt={passageId} src={scene} w="50%" mx="auto" />
@@ -104,7 +123,7 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
           )}
         </motion.div>
         <motion.ol
-          initial="show"
+          initial="hidden"
           animate="show"
           exit="hidden"
           variants={container}
@@ -172,13 +191,13 @@ export const PassageContainer = ({ passages, passageId }: Props) => {
           })}
         </motion.ol>
         <motion.div
-          initial="show"
+          initial="hidden"
           animate="show"
           exit="hidden"
           variants={{
-            hidden: { opacity: 1 },
+            hidden: { opacity: 0 },
             show: {
-              opacity: [1, 1],
+              opacity: [0, 1],
               transition: {
                 duration: 1,
               },
